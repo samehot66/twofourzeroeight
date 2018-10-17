@@ -74,7 +74,6 @@ namespace twozerofoureight
                 {
                     for (int j = 0; j < boardSize; j++)
                     {
-                      
                         if (i == 0 && j == 0) 
                         {
                             if (board[i, j] == board[i, j + 1] || board[i, j] == board[i + 1, j])
@@ -165,11 +164,7 @@ namespace twozerofoureight
 
         private void AddRandomSlot()
         {
-            if (Checkgamewin() == true)
-            {
-
-            }
-            else
+            if (Checkgamewin() == false)
             {
                 while (true)
                 {
@@ -233,12 +228,11 @@ namespace twozerofoureight
 
         public void PerformDown()
         {
-            if (Checkgamewin() == true)
+            if (Checkgamewin() == false)
             {
 
-            }
-            else
-            {
+            
+            
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
@@ -263,12 +257,11 @@ namespace twozerofoureight
 
         public void PerformUp()
         {
-            if (Checkgamewin() == true)
+            if (Checkgamewin() == false)
             {
 
-            }
-            else
-            {
+            
+           
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
@@ -293,12 +286,10 @@ namespace twozerofoureight
 
         public void PerformRight()
         {
-            if (Checkgamewin() == true)
+            if (Checkgamewin() == false)
             {
 
-            }
-            else
-            {
+           
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
@@ -323,12 +314,10 @@ namespace twozerofoureight
 
         public void PerformLeft()
         {
-            if (Checkgamewin() == true)
+            if (Checkgamewin() == false)
             {
 
-            }
-            else
-            {
+           
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
