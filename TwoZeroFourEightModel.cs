@@ -230,9 +230,6 @@ namespace twozerofoureight
         {
             if (Checkgamewin() == false)
             {
-
-            
-            
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
@@ -259,9 +256,6 @@ namespace twozerofoureight
         {
             if (Checkgamewin() == false)
             {
-
-            
-           
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
@@ -288,8 +282,7 @@ namespace twozerofoureight
         {
             if (Checkgamewin() == false)
             {
-
-           
+                
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {
@@ -316,8 +309,7 @@ namespace twozerofoureight
         {
             if (Checkgamewin() == false)
             {
-
-           
+                
                 bool changed = false; // whether the board has changed
                 foreach (int i in range)
                 {

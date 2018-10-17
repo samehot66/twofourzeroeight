@@ -51,6 +51,7 @@
             this.lblScore = new System.Windows.Forms.Label();
             this.lblWin = new System.Windows.Forms.Label();
             this.lblFull = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl00
@@ -337,11 +338,22 @@
             this.lblFull.Size = new System.Drawing.Size(0, 55);
             this.lblFull.TabIndex = 22;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 399);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Score";
+            // 
             // TwoZeroFourEightView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 527);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFull);
             this.Controls.Add(this.lblWin);
             this.Controls.Add(this.lblScore);
@@ -401,6 +413,7 @@
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblWin;
         private System.Windows.Forms.Label lblFull;
+        private System.Windows.Forms.Label label1;
     }
 }
 
