@@ -27,10 +27,10 @@ namespace twozerofoureight
 
         public void Notify(Model m)
         {
-            UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
-            UpdateScore(((TwoZeroFourEightModel)m).GetScore());
-            UpdateWin(((TwoZeroFourEightModel)m).Checkgamewin());
-            UpdateFull(((TwoZeroFourEightModel)m).Checkboardfull());
+            UpdateBoard(((TwoZeroFourEightModel)m).GetBoard()); //Update board
+            UpdateScore(((TwoZeroFourEightModel)m).GetScore());//Update score
+            UpdateWin(((TwoZeroFourEightModel)m).Checkgamewin()); //Check win
+            UpdateFull(((TwoZeroFourEightModel)m).Checkboardfull()); //Check full
         }
 
         private void UpdateTile(Label l, int i)
@@ -62,6 +62,7 @@ namespace twozerofoureight
                     break;
             }
         }
+
         private void UpdateBoard(int[,] board)
         {
             UpdateTile(lbl00, board[0, 0]);
@@ -82,37 +83,31 @@ namespace twozerofoureight
             UpdateTile(lbl33, board[3, 3]);
         }
 
-       
-
         private void UpdateScore(int score)
         {
-            lblScore.Text = Convert.ToString(score);
-          
+            lblScore.Text = Convert.ToString(score); //convert int score to string and show
         }
 
-        private void UpdateWin(bool win)
+        private void UpdateWin(bool win)//check win and output
         {
-
             if (win == true )
             {
                 lblWin.Text = "Game Win";
-                btnUp.Enabled = false;
+                btnUp.Enabled = false; //block input
                 btnDown.Enabled = false;
                 btnLeft.Enabled = false;
                 btnRight.Enabled = false;
-            
             }
             else
                 lblWin.Text = "";
-        }
+        } 
 
-        private void UpdateFull(bool full)
+        private void UpdateFull(bool full)//check board full and output
         {
-
             if (full == true)
             {
                 lblFull.Text = "Game Over";
-                btnUp.Enabled = false;
+                btnUp.Enabled = false; //block input
                 btnDown.Enabled = false;
                 btnLeft.Enabled = false;
                 btnRight.Enabled = false;
@@ -121,8 +116,6 @@ namespace twozerofoureight
             else
                 lblFull.Text = "";
         }
-
-
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
@@ -144,7 +137,7 @@ namespace twozerofoureight
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
         }
         
-        private void TwoZeroFourEightView_KeyDown(object sender, KeyEventArgs e)
+        private void TwoZeroFourEightView_KeyDown(object sender, KeyEventArgs e) //Allow input by keyboard
         {
             switch (e.KeyData)
             {
@@ -167,17 +160,17 @@ namespace twozerofoureight
             }
         }
 
-        private void TwoZeroFourEightView_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void TwoZeroFourEightView_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)//Allow input arrow
         {
-               switch (e.KeyCode)
-                {
+           switch (e.KeyCode)
+           {
                 case Keys.Right:
                 case Keys.Left:
                 case Keys.Down:
                 case Keys.Up:
                     e.IsInputKey = true;
-                    break;
-            }
+                break;
+           }
         }
 
         private void btnUp_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -189,15 +182,15 @@ namespace twozerofoureight
         {
             TwoZeroFourEightView_PreviewKeyDown(sender, e);
         }
+
         private void btnLeft_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             TwoZeroFourEightView_PreviewKeyDown(sender, e);
         }
+
         private void btnRight_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             TwoZeroFourEightView_PreviewKeyDown(sender, e);
         }
-
-      
     }
 }

@@ -40,8 +40,7 @@ namespace twozerofoureight
             return board;
         }
 
-        public int GetScore()
-           
+        public int GetScore() //sum score
         {
             int sum=0;
             for (int i=0;i<boardSize;i++)
@@ -54,7 +53,7 @@ namespace twozerofoureight
             return sum;
         }
 
-        public bool Checkboardfull()
+        public bool Checkboardfull() 
         {
             int count = 0;
             for (int i = 0; i < boardSize; i++)
@@ -67,9 +66,10 @@ namespace twozerofoureight
                     }
                 }
             }
-
+            //if count = 16 that mean board full
             if (count == 16)
             {
+                //loop to check every condition that can let game continue
                 for (int i = 0; i < boardSize; i++)
                 {
                     for (int j = 0; j < boardSize; j++)
@@ -109,8 +109,6 @@ namespace twozerofoureight
                                 return false;
                             }
                         }
-                       
-                        
                         else if (i != 0 &&i != 3  &&j == 0 )
                         {
                             if ( board[i, j] == board[i, j + 1] || board[i, j] == board[i + 1, j]  || board[i, j] == board[i - 1, j])
@@ -118,7 +116,6 @@ namespace twozerofoureight
                                 return false;
                             }
                         }
-                       
                         else if ( i != 0 &&i != 3 && j == 3 )
                         {
                             if (board[i, j] == board[i + 1, j] || board[i, j] == board[i, j - 1] || board[i, j] == board[i - 1, j])
@@ -126,8 +123,6 @@ namespace twozerofoureight
                                 return false;
                             }
                         }
-                   
-                    
                         else if (i == 3 && j != 0 && j != 3) 
                         {
                             if (board[i, j] == board[i, j - 1] || board[i, j] == board[i, j + 1] || board[i, j] == board[i - 1, j])
@@ -145,11 +140,11 @@ namespace twozerofoureight
                     }
                 }
                 return true;
-
             }
             return false;
         }
-        public bool Checkgamewin()
+
+        public bool Checkgamewin() //check win if there is 2048 that mean game win
         {
             for (int i = 0; i < boardSize; i++)
             {
