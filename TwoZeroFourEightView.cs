@@ -29,8 +29,8 @@ namespace twozerofoureight
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
             UpdateScore(((TwoZeroFourEightModel)m).GetScore());
-            UpdateWin(((TwoZeroFourEightModel)m).Checkgameover());
-           
+            UpdateWin(((TwoZeroFourEightModel)m).Checkgamewin());
+            UpdateFull(((TwoZeroFourEightModel)m).Checkboardfull());
         }
 
         private void UpdateTile(Label l, int i)
@@ -100,12 +100,29 @@ namespace twozerofoureight
                 btnDown.Enabled = false;
                 btnLeft.Enabled = false;
                 btnRight.Enabled = false;
+            
             }
             else
                 lblWin.Text = "";
         }
 
-       
+        private void UpdateFull(bool full)
+        {
+
+            if (full == true)
+            {
+                lblFull.Text = "Game Over";
+                btnUp.Enabled = false;
+                btnDown.Enabled = false;
+                btnLeft.Enabled = false;
+                btnRight.Enabled = false;
+               
+            }
+            else
+                lblFull.Text = "";
+        }
+
+
 
         private void btnLeft_Click(object sender, EventArgs e)
         {

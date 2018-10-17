@@ -54,13 +54,109 @@ namespace twozerofoureight
             return sum;
         }
 
-        public bool Checkgameover()
+        public bool Checkboardfull()
+        {
+            int count = 0;
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    if (board[i, j] != 0)
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            if (count == 16)
+            {
+                for (int i = 0; i < boardSize; i++)
+                {
+                    for (int j = 0; j < boardSize; j++)
+                    {
+                      
+                        if (i == 0 && j == 0) 
+                        {
+                            if (board[i, j] == board[i, j + 1] || board[i, j] == board[i + 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                        else if (i == 0 && j == 3) 
+                        {
+                            if (board[i, j] == board[i, j - 1] || board[i, j] == board[i + 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                         else if (i == 3 && j == 0) 
+                        {
+                            if (board[i, j] == board[i, j + 1] || board[i, j] == board[i - 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                        else if (i == 3 && j == 3)
+                        { 
+                            if (board[i, j] == board[i, j - 1] || board[i, j] == board[i - 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                        else if (i == 0 && j != 0 && j != 3) 
+                        {
+                            if (board[i, j] == board[i, j - 1]  || board[i, j] == board[i + 1, j]|| board[i, j] == board[i, j + 1])
+                            {
+                                return false;
+                            }
+                        }
+                       
+                        
+                        else if (i != 0 &&i != 3  &&j == 0 )
+                        {
+                            if ( board[i, j] == board[i, j + 1] || board[i, j] == board[i + 1, j]  || board[i, j] == board[i - 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                       
+                        else if ( i != 0 &&i != 3 && j == 3 )
+                        {
+                            if (board[i, j] == board[i + 1, j] || board[i, j] == board[i, j - 1] || board[i, j] == board[i - 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                   
+                    
+                        else if (i == 3 && j != 0 && j != 3) 
+                        {
+                            if (board[i, j] == board[i, j - 1] || board[i, j] == board[i, j + 1] || board[i, j] == board[i - 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                        else 
+                        {
+                            if (board[i, j] == board[i, j - 1] || board[i, j] == board[i, j + 1] || board[i, j] == board[i + 1, j] || board[i, j] == board[i - 1, j])
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+
+            }
+            return false;
+        }
+        public bool Checkgamewin()
         {
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    if (board[i, j] == 2048)
+                    if (board[i, j] == 8)
                         return true;
                 }
             }

@@ -50,6 +50,7 @@
             this.btnDown = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblWin = new System.Windows.Forms.Label();
+            this.lblFull = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl00
@@ -321,17 +322,27 @@
             // lblWin
             // 
             this.lblWin.AutoSize = true;
-            this.lblWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWin.Location = new System.Drawing.Point(46, 146);
             this.lblWin.Name = "lblWin";
-            this.lblWin.Size = new System.Drawing.Size(0, 69);
+            this.lblWin.Size = new System.Drawing.Size(0, 55);
             this.lblWin.TabIndex = 21;
+            // 
+            // lblFull
+            // 
+            this.lblFull.AutoSize = true;
+            this.lblFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFull.Location = new System.Drawing.Point(58, 154);
+            this.lblFull.Name = "lblFull";
+            this.lblFull.Size = new System.Drawing.Size(0, 55);
+            this.lblFull.TabIndex = 22;
             // 
             // TwoZeroFourEightView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 527);
+            this.Controls.Add(this.lblFull);
             this.Controls.Add(this.lblWin);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnDown);
@@ -389,6 +400,7 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblWin;
+        private System.Windows.Forms.Label lblFull;
     }
 }
 
