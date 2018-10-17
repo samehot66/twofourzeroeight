@@ -270,6 +270,7 @@
             this.btnLeft.Text = "←";
             this.btnLeft.UseVisualStyleBackColor = true;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            this.btnLeft.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnLeft_PreviewKeyDown);
             // 
             // btnUp
             // 
@@ -281,6 +282,7 @@
             this.btnUp.Text = "↑";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            this.btnUp.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnUp_PreviewKeyDown);
             // 
             // btnRight
             // 
@@ -292,6 +294,7 @@
             this.btnRight.Text = "→";
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            this.btnRight.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnRight_PreviewKeyDown);
             // 
             // btnDown
             // 
@@ -303,6 +306,7 @@
             this.btnDown.Text = "↓";
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.btnDown.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnDown_PreviewKeyDown);
             // 
             // lblScore
             // 
@@ -350,9 +354,12 @@
             this.Controls.Add(this.lbl02);
             this.Controls.Add(this.lbl01);
             this.Controls.Add(this.lbl00);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TwoZeroFourEightView";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TwoZeroFourEightView_KeyDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.TwoZeroFourEightView_PreviewKeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
